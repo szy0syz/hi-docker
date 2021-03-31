@@ -16,4 +16,4 @@
 
 ## 动手开发自己的Docker
 
-> 用Golang开发一个 `Jerry-Docker`
+> 用`Golang`开发一个 `Jerry-Docker`
