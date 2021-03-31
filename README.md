@@ -14,6 +14,12 @@
 - `Docker`内部用什么实现资源限制？如何证明？
   - `cgrounps`
 
+### Docker镜像的特性
+
+- Docker镜像具备了应用运行所需要的所有依赖
+- 一次构建，处处运行
+- Docker镜像的存储时基于 checksum 的去重存储，大大降低存储空间
+
 ## 动手开发自己的Docker
 
 > 用`Golang`开发一个 `Jerry-Docker`
