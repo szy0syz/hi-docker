@@ -11,7 +11,7 @@
 
 `Namespace` 是 Linux 内核的一个特性，该特性可以实现在同一主机系统中，对进程 ID、主机名、用户 ID、文件名、网络和进程间通信等资源的隔离。`Docker` 利用 `Linux` 内核的 `Namespace` 特性，实现了每个容器的资源相互隔离，从而保证容器内部只能访问到自己 `Namespace` 的资源。
 
-目前 `Linux5.6` 内核中共有8种类型的 `Namespace`，但最新版的 `Docker` 中只使用了其中的6中，分别为： 
+目前 `Linux5.6` 内核中共有8种类型的 `Namespace`，但最新版的 `Docker` 中只使用了其中的6中，分别为：
 
 - `Mount Namespace` 隔离挂载点
 - `PID Namespace` 隔离进程ID
@@ -25,6 +25,12 @@
 - `Docker`内部用什么实现资源限制？如何证明？
   - `cgrounps`
 
-## 开发自己的Docker
+### Docker镜像的特性
+
+- Docker镜像具备了应用运行所需要的所有依赖
+- 一次构建，处处运行
+- Docker镜像的存储时基于 checksum 的去重存储，大大降低存储空间
+
+## 动手开发自己的Docker
 
 > 用`Golang`开发一个 `Jerry-Docker`
