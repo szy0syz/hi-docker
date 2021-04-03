@@ -16,6 +16,9 @@ Docker 可以简化CI持续集成和CD持续交付的构建流程，让开发者
   - 通过`clone()`在创建新进程的同时创建`namespace`，`clone()`实际上市Linux系统调用fork()的一种更通用的实现方式
   - 通过`setns()`加入一个已经存在的`namespace`
   - 通过`unshare()`在原先进程上进行`namespace`隔离，它与`clone()`很像，但不同的是，`unshare()`运行在原先的进程上，不需要启动一个新进程
+  - 查看`/proc/[pid]/ns`文件
+
+补充`fork()`:
 
 - `Docker`内部怎么实现资源隔离的？证明它！
   - `Namespace`
