@@ -2,7 +2,20 @@
 
 ## 基础
 
+### 核心
+
+Docker 可以简化CI持续集成和CD持续交付的构建流程，让开发者集中精力在应用开发商，同时运维和测试页可以并行进行，保持整个开发、测试、发布和运维的一体化。
+
+- 通过 `namespace` 实现资源隔离
+- 通过 `cgroups` 实现资源限制
+- 通过 `写时复制 copy-on-wirte` 实现高效文件操作
+
 ### 实现资源隔离
+
+- `namespace` API操作主要包括 `clone()`、`setns()`、`unshare()` 和 `/proc`下的部分文件。
+  - 通过`clone()`在创建新进程的同时创建`namespace`，`clone()`实际上市Linux系统调用fork()的一种更通用的实现方式
+  - 通过`setns()`加入一个已经存在的`namespace`
+  - 通过`unshare()`在原先进程上进行`namespace`隔离，它与`clone()`很像，但不同的是，`unshare()`运行在原先的进程上，不需要启动一个新进程
 
 - `Docker`内部怎么实现资源隔离的？证明它！
   - `Namespace`
